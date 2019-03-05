@@ -56,6 +56,9 @@ body {
   font-weight: 300;
   line-height: 1.625em;
   position: relative;
+  overflow-y: scroll;
+overflow-x: hidden;
+width: 100%;
 }
 
 ol, ul {
@@ -1995,8 +1998,13 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 28px;
   }
   #header #logo img {
-    max-height: 40px;
+    max-height: 60px;
+    max-width: 60px;
+    margin-left: 9px ;
+    margin-top: 9px;
   }
+  
+  
 }
 
 /*--------------------------------------------------------------
@@ -2123,6 +2131,9 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.4s;
   outline: none;
   cursor: pointer;
+  margin-right: 8px;
+  margin-top: 5px;
+
 }
 
 @media (max-width: 767px) {

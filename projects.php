@@ -1,4 +1,9 @@
-	<!DOCTYPE html>
+<?php
+include('./iugale-admin/connect.php');
+$comp=mysqli_query($conn,"Select Distinct company_name from projects");
+$original=mysqli_query($conn,"Select * from projects");
+?>
+<!DOCTYPE html>
 	<html lang="zxx" class="no-js">
 	<head>
 		<!-- Mobile Specific Meta -->
@@ -72,62 +77,33 @@
 				
 
 			<!-- Start project Area -->
-			<section class="project-area section-gap" id="project">
+            <section class=" section-gap" id="project" >
 					<h1 class="text-white row justify-content-center align-items-center">
 							Our Projects				
 						</h1>	
 						<div class="carousel  row justify-content-center align-items-center">
-
+                            <?php  while ($select_query_array=   mysqli_fetch_array($comp) ){?>
 							<figure class="product-card carousel-cell">
 								<div class="fig-body">
 									<div class="fig-head">
-										<h2>Project Auto</h2>
+										<h2><?php echo $select_query_array['company_name']; ?></h2>
 									</div>
 									<ul class="product-checklist ">
-										<li class="check"><a href="">Project Demo</a></li>
-										<li class="check"><a href="">Project Demo</a></li>
-										<li class="check"><a href="">Project Demo</a></li>
-										<li class="check"><a href="">Project Demo</a></li>
-										<li class="check"><a href="">Project Demo</a></li>
-										<li class="check"><a href="">Project Demo</a></li>
-										
+                                        <?php  while ($select_query_array1=   mysqli_fetch_array($original) ){
+                                             if($select_query_array['company_name']==$select_query_array1['company_name']) { ?>
+
+                                                <li class="check"><a href="<?php echo $select_query_array1['project_url'];?>"><?php echo $select_query_array1['project_name'];?></a></li>
+
+                                        
+                                        <?php } } $original=mysqli_query($conn,"Select * from projects"); ?>
+
 									</ul>
 									
 								</div>
 							</figure>
-							<figure class="product-card carousel-cell">
-								<div class="fig-body">
-									<div class="fig-head">
-										<h2>Project Auto</h2>
-									</div>
-									<ul class="product-checklist">
-										<li class="check"><a href="">Project Demo</a></li>
-										<li class="check"><a href="">Project Demo</a></li>
-										<li class="check"><a href="">Project Demo</a></li>
-										<li class="check"><a href="">Project Demo</a></li>
-										<li class="check"><a href="">Project Demo</a></li>
-										<li class="check"><a href="">Project Demo</a></li>
-										
-									</ul>
-									
-								</div>
-							</figure>
-							<figure class="product-card carousel-cell">
-								<div class="fig-body">
-									<div class="fig-head">
-										<h2>Project Auto</h2>
-									</div>
-									<ul class="product-checklist">
-										<li class="check"><a href="">Project Demo</a></li>
-										<li class="check"><a href="">Project Demo</a></li>
-										<li class="check"><a href="">Project Demo</a></li>
-										<li class="check"><a href="">Project Demo</a></li>
-										<li class="check"><a href="">Project Demo</a></li>
-										<li class="check"><a href="">Project Demo</a></li>
-									</ul>
-									
-								</div>
-							</figure>
+                            <?php } ?>
+                            </div>
+						
 			</section>
 			<!-- End project Area -->
 
