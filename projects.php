@@ -19,7 +19,7 @@ $original=mysqli_query($conn,"Select * from projects");
 		<!-- meta character set -->
 		<meta charset="UTF-8">
 		<!-- Site Title -->
-		<title>Iugale Services Pvt Ltd</title>
+		<title>Iugale Tech</title>
 		
 
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 

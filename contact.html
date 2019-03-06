@@ -14,7 +14,7 @@
 		<!-- meta character set -->
 		<meta charset="UTF-8">
 		<!-- Site Title -->
-		<title>Iugale Services Pvt Ltd</title>
+		<title>Iugale Tech</title>
 
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
 			<!--
@@ -112,10 +112,19 @@
 										<input name="email" placeholder="Enter email address" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" class="common-input mb-20 form-control" required="" type="email">
 
 										<input name="subject" placeholder="Enter your subject" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your subject'" class="common-input mb-20 form-control" required="" type="text">
+										<select name="typeofservice" class="common-input mb-20 form-control" required="" >
+											<option value="" disabled selected>Select Type of Service</option>
+											<option value="Software Development">Software Development</option>
+											<option value="Sales">Sales</option>
+											<option value="Marketing">Marketing</option>
+											<option value="Advertising">Advertising</option>
+											<option value="Market Research">Market Research</option>
+											<option value="Other">Other</option>
+										</select>
 										<div class="mt-20 alert-msg" style="text-align: left;"></div>
 									</div>
 									<div class="col-lg-6 form-group">
-										<textarea class="common-textarea form-control" name="message" placeholder="Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
+										<textarea class="common-textarea form-control" name="message" placeholder="Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required="" style="height:250px;"></textarea>
 										<button class="genric-btn primary circle mt-30" style="float: right;">Send Message</button>								
 									</div>
 								</div>
