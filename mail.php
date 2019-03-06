@@ -1,7 +1,8 @@
 <?php
-    $to = 'demo@spondonit.com';
+    $to = 'shinde.kfc@gmail.com';
     $firstname = $_POST["fname"];
     $email= $_POST["email"];
+    $type= $_POST["typeofservice"];
     $text= $_POST["message"];
     $phone= $_POST["phone"];
     
@@ -17,15 +18,16 @@
         </tr>
         <tr><td>Email: '.$email.'</td></tr>
         <tr><td>phone: '.$phone.'</td></tr>
+        <tr><td>phone: '.$type.'</td></tr>
         <tr><td>Text: '.$text.'</td></tr>
         
     </table>';
 
-    if (@mail($to, $email, $message, $headers))
+    if (mail($to, $type,$email, $message, $headers))
     {
         echo 'The message has been sent.';
     }else{
-        echo 'failed';
+        echo 'Failed';
     }
 
 ?>

@@ -80,7 +80,7 @@ $original=mysqli_query($conn,"Select * from projects");
 								IUGALE Services Pvt Ltd		
 							</h1>
 							
-							<a href="#" class="primary-btn header-btn text-uppercase">Get Started</a>
+							<a href="contact.html" class="primary-btn header-btn text-uppercase">Get Started</a>
 						</div>												
 					</div>
 				</div>
@@ -144,9 +144,9 @@ $original=mysqli_query($conn,"Select * from projects");
 							<a class="primary-btn" href="#">Get Started Now</a>
 						</div>
 						<div class="col-lg-4 col-md-12 home-about-right relative">
-							<form class="form-wrap" action="#">
+							<form class="form-wrap" action="mail.php">
 								<h4 class="text-white pb-20">Request a Quote</h4>
-								<div class="form-select" id="service-select"">
+								<div class="form-select" id="service-select">
 									<select>
 										<option value="1">Select Service</option>
 										<option value="2">Service One</option>
