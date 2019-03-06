@@ -42,14 +42,14 @@ $original=mysqli_query($conn,"Select * from projects");
 			    <div class="container main-menu">
 			    	<div class="row align-items-center justify-content-between d-flex">
 				      <div id="logo">
-				        <a href="index.html"><img src="img/iugale.png" alt="" title="" height="75" width="75"/></a>
+				        <a href="index.php"><img src="img/iugale.png" alt="" title="" height="75" width="75"/></a>
 				      </div>
 				      <nav id="nav-menu-container">
 				        <ul class="nav-menu">
-				          <li class="menu-active"><a href="index.html">Home</a></li>
+				          <li class="menu-active"><a href="index.php">Home</a></li>
 				          <li><a href="about.html">About</a></li>
 				          
-				          <li><a href="projects.html">Projects</a></li>
+				          <li><a href="projects.php">Projects</a></li>
 				         <li> <a href="services.html">Services</a></li>					          
 				          <li><a href="contact.html">Contact</a></li>
 			             
