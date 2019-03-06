@@ -148,12 +148,15 @@ $original=mysqli_query($conn,"Select * from projects");
 								<h4 class="text-white pb-20">Request a Quote</h4>
 								<div class="form-select" id="service-select">
 									<select>
-										<option value="1">Select Service</option>
-										<option value="2">Service One</option>
-										<option value="3">Service Two</option>
-										<option value="4">Service Three</option>
-										<option value="5">Service Four</option>
+										<option value="" disabled selected>Select Type of Service</option>
+										<option value="Software Development">Software Development</option>
+										<option value="Sales">Sales</option>
+										<option value="Marketing">Marketing</option>
+										<option value="Advertising">Advertising</option>
+										<option value="Market Research">Market Research</option>
+										<option value="Other">Other</option>
 									</select>
+								</div>	
 								</div>								
 								<input type="text" class="form-control" placeholder="name">
 								<input type="phone" class="form-control" placeholder="Phone Number">
