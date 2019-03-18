@@ -313,7 +313,7 @@ $(document).ready(function(){
 
             // When the window has finished loading create our google map below
 
-            if(document.getElementById("map")){
+      /*      if(document.getElementById("map")){
             
             google.maps.event.addDomListener(window, 'load', init);
         
@@ -345,7 +345,7 @@ $(document).ready(function(){
                     title: 'Snazzy!'
                 });
             }
-    }
+    }*/
 
 
         $(document).ready(function() {
