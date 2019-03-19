@@ -102,7 +102,7 @@ function validatequote() {
 								IUGALE Services Pvt Ltd		
 							</h1>
 							
-							<a href="contact.html" class="primary-btn header-btn text-uppercase">Get Started</a>
+							<a href="contact.html"  class="primary-btn header-btn">Get Started</a>
 						</div>												
 					</div>
 				</div>

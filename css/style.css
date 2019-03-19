@@ -15,14 +15,14 @@
 	margin: 0 0 0 0;
 	background: url('../img/project-back.jpg');
   background-size:cover;
-  height: 1100px;
+  height: auto;
   }
   @media only screen and (max-width: 600px) {
     #project{
       margin: 0 0 0 0;
       background: url('../img/project-back.jpg');
       background-size:cover;
-      height: 2000px;
+      height: auto;
       }
       figure.product-card .fig-body {
         width: 98%;
@@ -70,7 +70,7 @@
   
   figure.product-card {
     width: 25%;
-    margin: 8% 0 5%;
+    margin: 4% 0 2.5%;
     position: relative;
     display: flex;
     justify-content: center;

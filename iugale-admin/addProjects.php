@@ -72,7 +72,7 @@ if(isset($_POST['company_name'])){
 				      </div>
 				      <nav id="nav-menu-container">
 				        <ul class="nav-menu">
-				          <li class="menu-active"><a href="index.html">Home</a></li>
+				          <li class="menu-active"><a href="index.php">Home</a></li>
                           <li><a href="addProjects.php">Add Projects</a></li>
                           <li><a href="updateProjects.php">Update Projects</a></li>
 				          <li><a href="removeProjects.php">Remove Projects</a></li>    

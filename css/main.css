@@ -1947,11 +1947,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .main-menu {
-  padding-top: 20px;
+  padding-top: 5px;
 }
 
 #header {
-  padding: 0px 0px 20px 0px;
+  padding: 0px 0px 5px 0px;
   position: fixed;
   left: 0;
   top: 0;
@@ -2248,7 +2248,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .section-gap {
-  padding: 120px 0;
+  padding: 80px 0;
 }
 
 .section-title {
@@ -2363,8 +2363,27 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .banner-content {
   text-align: center;
-  margin-top: 500px;
+  margin-top: 600px;
 }
+
+
+
+@media (width: 1366px ) {
+  .banner-content {
+    text-align: center;
+    margin-top: calc( 100vh - 350px );
+    
+  }
+}
+@media (min-width: 1400px) {
+  .banner-content {
+    text-align: center;
+    margin-top: 450px;
+    
+  }
+}
+
+
 
 .banner-content h1 {
   color: #fff;
