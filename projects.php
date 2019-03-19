@@ -191,8 +191,8 @@ $original=mysqli_query($conn,"Select * from projects");
 			</section>
 			<!-- End feedback Area -->
 				
-			<!-- start footer Area -->		
-			<footer class="footer-area section-gap">
+		<!-- start footer Area -->		
+		<footer class="footer-area section-gap">
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-5 col-md-6 col-sm-6">
@@ -202,15 +202,16 @@ $original=mysqli_query($conn,"Select * from projects");
 									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.
 								</p>
 								<p class="footer-text">
-									<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved								</p>								
+	Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
+								</p>								
 							</div>
 						</div>
 						<div class="col-lg-5  col-md-6 col-sm-6">
 							<div class="single-footer-widget">
 								<h6>Newsletter</h6>
 								<p>Stay update with our latest</p>
-								<form  method="post" id='news' name="news" class="form-inline" action="news.php">
+								<div>
+									<form  method="post" id='news' name="news" class="form-inline" action="news.php">
 										<input class="form-control" name="email" placeholder="Enter Email" onfocus="this.placeholder = ''" type="text" >
 			                      <button class="click-btn btn btn-default" onclick="validate();"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
 			                            	<div style="position: absolute; left: -5000px;">
@@ -222,21 +223,22 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 							</div>
 						</div>						
 						<div class="col-lg-2 col-md-6 col-sm-6 social-widget">
-								<div class="single-footer-widget">
-									<h6>Follow Us</h6>
-									<p>Let us be social</p>
-									<div class="footer-social d-flex align-items-center">
-										<a href="https://www.facebook.com/Iugale-Services-Private-Limited-2332419313655996/"><i class="fa fa-facebook"></i></a>
-										<a href="https://twitter.com/IugaleL"><i class="fa fa-twitter"></i></a>
-										<a href="https://www.linkedin.com/company/18969679/"><i class="fa fa-star"></i></a>
-										
-									</div>
+							<div class="single-footer-widget">
+								<h6>Follow Us</h6>
+								<p>Let us be social</p>
+								<div class="footer-social d-flex align-items-center">
+									<a href="https://www.facebook.com/Iugale-Services-Private-Limited-2332419313655996/"><i class="fa fa-facebook"></i></a>
+									<a href="https://twitter.com/IugaleL"><i class="fa fa-twitter"></i></a>
+									<a href="https://www.linkedin.com/company/18969679/"><i class="fa fa-star"></i></a>
+									
 								</div>
-							</div>							
+							</div>
+						</div>							
 					</div>
 				</div>
 			</footer>	
 			<!-- End footer Area -->	
+
 
 			<script src="js/vendor/jquery-2.2.4.min.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

@@ -40,6 +40,18 @@
 	  }
 	  
 	}
+	function validatequote() {
+  var a = document.forms["quote"]["type"].value;
+	var b = document.forms["quote"]["name"].value;
+	var c = document.forms["quote"]["phone"].value;
+	var d = document.forms["quote"]["message"].value;
+	var e = document.forms["quote"]["email"].value;
+  if (a == "" || b == "" || c == "" || d == "" || e == "" ) {
+		alert("Values cannot be empty");
+		window.location.href='index.php';
+  }
+ 
+}
 	</script>
 		</head>
 		<body>	
@@ -116,7 +128,7 @@
 							</div>														
 						</div>
 						<div class="col-lg-8">
-							<form class="form-area " id="myForm" action="mail.php" method="post" class="contact-form text-right">
+							<form class="form-area " id='quote' action="quote.php" method="post" class="contact-form text-right">
 								<div class="row">	
 									<div class="col-lg-6 form-group">
 											<select  id='contact-select' name="typeofservice" class="form-select form-control" required="" >
@@ -138,7 +150,7 @@
 									</div>
 									<div class="col-lg-6 form-group">
 										<textarea class="common-textarea form-control" name="message" placeholder="Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required="" style="height:250px;"></textarea>
-										<button class="genric-btn primary circle mt-30" style="float: right;">Send Message</button>								
+										<button  onclick="validatequote();"class="genric-btn primary circle mt-30" style="float: right;">Send Message</button>								
 									</div>
 								</div>
 							</form>	
