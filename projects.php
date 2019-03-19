@@ -36,6 +36,19 @@ $original=mysqli_query($conn,"Select * from projects");
 			<link rel="stylesheet" href="css/owl.carousel.css">
 			<link rel="stylesheet" href="css/main.css">
 			<link rel="stylesheet" href="css/style.css">
+
+			<script>
+            function validate() {
+  var x = document.forms["news"]["email"].value;
+  if (x == "") {
+		alert("Values cannot be empty");
+		window.location.href='index.php';
+  }
+  
+}
+</script>
+
+
 		</head>
 		<body>	
 			  <header id="header" id="home">
@@ -197,12 +210,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 							<div class="single-footer-widget">
 								<h6>Newsletter</h6>
 								<p>Stay update with our latest</p>
-								<div class="" id="mc_embed_signup">
-									<form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="form-inline">
-										<input class="form-control" name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">
-			                            	<button class="click-btn btn btn-default"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
+								<form  method="post" id='news' name="news" class="form-inline" action="news.php">
+										<input class="form-control" name="email" placeholder="Enter Email" onfocus="this.placeholder = ''" type="text" >
+			                      <button class="click-btn btn btn-default" onclick="validate();"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
 			                            	<div style="position: absolute; left: -5000px;">
-												<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
 											</div>
 
 										<div class="info"></div>

@@ -41,6 +41,28 @@ $original=mysqli_query($conn,"Select * from projects");
 			<link rel="stylesheet" href="css/main.css">
 			<link rel="stylesheet" href="css/style.css">
 			<link rel="stylesheet" href="css/nucleo-icons.css">
+			<script>
+            function validate() {
+  var x = document.forms["news"]["email"].value;
+  if (x == "") {
+		alert("Values cannot be empty");
+		window.location.href='index.php';
+  }
+  
+}
+function validatequote() {
+  var a = document.forms["quote"]["type"].value;
+	var b = document.forms["quote"]["name"].value;
+	var c = document.forms["quote"]["phone"].value;
+	var d = document.forms["quote"]["message"].value;
+	var e = document.forms["quote"]["email"].value;
+  if (a == "" || b == "" || c == "" || d == "" || e == "" ) {
+		alert("Values cannot be empty");
+		window.location.href='index.php';
+  }
+ 
+}
+</script>
 		
 				
 			
@@ -141,13 +163,13 @@ $original=mysqli_query($conn,"Select * from projects");
 							<p class="pb-20">
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp or incididunt ut labore et dolore magna aliqua. Ut enim ad minim. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.
 							</p>
-							<a class="primary-btn" href="#">Get Started Now</a>
+							<a class="primary-btn" href="contact.html">Get Started Now</a>
 						</div>
 						<div class="col-lg-4 col-md-12 home-about-right relative">
-							<form class="form-wrap" action="mail.php">
+						<form class="form-wrap" name='quote' id='quote' method='post'action="quote.php">
 								<h4 class="text-white pb-20">Request a Quote</h4>
 								<div class="form-select" id="service-select">
-									<select>
+									<select name='type' id='type'>
 										<option value="" disabled selected>Select Type of Service</option>
 										<option value="Software Development">Software Development</option>
 										<option value="Sales">Sales</option>
@@ -156,13 +178,12 @@ $original=mysqli_query($conn,"Select * from projects");
 										<option value="Market Research">Market Research</option>
 										<option value="Other">Other</option>
 									</select>
-								</div>	
 								</div>								
-								<input type="text" class="form-control" placeholder="Name">
-								<input type="phone" class="form-control" placeholder="Phone Number">
-								<input type="email" class="form-control" placeholder="Email Address">
+								<input type="text" name='name' id='name' class="form-control" placeholder="Name">
+								<input type="phone" name='phone' id='phone' class="form-control" placeholder="Phone Number">
+								<input type="email" name='email' id='email' class="form-control" placeholder="Email Address">
 								<textarea name="message" id="" cols="30" rows="5" placeholder="Message" class="form-control"></textarea>
-								<button class="primary-btn">Request Free Quote</button>
+								<button class="primary-btn" onclick="validatequote();">Request Free Quote</button>
 							</form>
 						</div>
 					</div>
@@ -346,12 +367,11 @@ $original=mysqli_query($conn,"Select * from projects");
 							<div class="single-footer-widget">
 								<h6>Newsletter</h6>
 								<p>Stay update with our latest</p>
-								<div class="" id="mc_embed_signup">
-									<form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="form-inline">
-										<input class="form-control" name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">
-			                            	<button class="click-btn btn btn-default"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
+								<div>
+									<form  method="post" id='news' name="news" class="form-inline" action="news.php">
+										<input class="form-control" name="email" placeholder="Enter Email" onfocus="this.placeholder = ''" type="text" >
+			                      <button class="click-btn btn btn-default" onclick="validate();"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
 			                            	<div style="position: absolute; left: -5000px;">
-												<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
 											</div>
 
 										<div class="info"></div>

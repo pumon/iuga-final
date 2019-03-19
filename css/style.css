@@ -399,6 +399,8 @@
   background-color: #6bb2cd;
   animation-name: dot3; }
 
+
+
 @keyframes dot1 {
   3%,
     97% {
@@ -458,4 +460,5 @@
     margin-top: -37px;
     margin-left: -8px;
     border-radius: 10px; } }
-  
+
+ 
