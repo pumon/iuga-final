@@ -1,10 +1,8 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "1421";
-$database='iugale_online';
+include("./database.php");
+
 // Create connection
-$conn = new mysqli($servername, $username, $password,$database);
+$conn = new mysqli($host, $user, $password,$database);
 
 // Check connection
 if ($conn->connect_error) {

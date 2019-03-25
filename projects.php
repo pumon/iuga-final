@@ -59,12 +59,12 @@ $original=mysqli_query($conn,"Select * from projects");
 				      </div>
 				      <nav id="nav-menu-container">
 				        <ul class="nav-menu">
-				          <li class="menu-active"><a href="index.php">Home</a></li>
-				          <li><a href="about.html">About</a></li>
-				          
-				          <li><a href="projects.php">Projects</a></li>
-				         <li> <a href="services.html">Services</a></li>					          
-				          <li><a href="contact.html">Contact</a></li>
+								<li class="menu-active"><a href="index.php">Home</a></li>
+								<li><a href="about.html">About</a></li>		
+					  <li> <a href="services.html">Services</a></li>
+					  <li><a href="projects.php">Projects</a></li>	
+					  <li><a href="contact.html">Contact</a></li>
+					  <li> <a href="./careers/">Careers</a></li>
 			             
 				        </ul>
 				      </nav><!-- #nav-menu-container -->		    		
@@ -81,7 +81,7 @@ $original=mysqli_query($conn,"Select * from projects");
 							<h1 class="text-white">
 								Projects				
 							</h1>	
-							<p class="text-white link-nav"><a href="index.html">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="projects.html"> Projects</a></p>
+							<p class="text-white link-nav"><a href="index.php">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="projects.php"> Projects</a></p>
 						</div>	
 					</div>
 				</div>
