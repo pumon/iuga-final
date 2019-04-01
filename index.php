@@ -93,7 +93,7 @@ function validatequote() {
 			<!-- start banner Area -->
 			
 			
-			<section class=" relative" id="home">					
+			<section class="relative" id="home">					
 					<div class="overlay overlay-bg"></div>
 				<div class="container">
 					<div class="row fullscreen d-flex align-items-center justify-content-center" id="banners">
@@ -103,7 +103,8 @@ function validatequote() {
 								IUGALE Services Pvt Ltd		
 							</h1>
 							
-							<a href="contact.html"  class="primary-btn header-btn">Get Started</a>
+							<a href="contact.html" id="started" class="primary-btn">Get Started</a>
+							
 						</div>												
 					</div>
 				</div>

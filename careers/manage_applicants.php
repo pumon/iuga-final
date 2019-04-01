@@ -1,9 +1,11 @@
 <?php
 include('config.php');
 //include_once('notify.php');
-$q1=mysqli_query($db1,"select * from application where job_id=$_GET[jobid]");
-$q3=mysqli_query($db1,"select * from jobs where jobid = $_GET[jobid]");
+
+$q3=mysqli_query($db1,"select id, name, mobile, email, date, title from jsee, jobs where jid=jobid");
 $q3row=mysqli_fetch_array($q3);
+
+
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -53,91 +55,53 @@ $q3row=mysqli_fetch_array($q3);
         }
     </script>
 </head>
+
+
+
 <body>
 
-<div id="nav">
-    <nav>
-        <div class="navbar" id="insidenav">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">Job Portal</a>
-            </div>
-
-            <ul class="nav navbar-nav">
-               
-                <li class="active"><a href="#">View Applicants</a></li>
-                <li><a href="#">Notifications</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="post_jobs.php">Post New Jobs</a></li>
-                        <li><a href="managejobs.php">Manage Jobs</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Manage Applicants</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <form class="navbar-form navbar-left" role="search">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
-                </div>
-                <button type="submit" class="btn btn-default">Search</button>
-            </form>
-            
-        </div><!-- /.navbar-collapse -->
-    </nav>
-</div><!-- /.container-fluid -->
 
 <!-- ----------------------------------------- contents -------------------------------------------------------------------------- -->
 <div class="container-fluid">
-    <h3 class="text-center" style="margin-top: 50px;">These users have applied for the job : <?php echo $q3row['title'];?></h3>
-    <h4 class="text-center">You can view their profile, select or reject them.</h4>
-    <div class="page-header" style="background: steelblue"></div>
-    <?php if(mysqli_num_rows($q1)>0) { ?>
-		<div class="table-responsive">
-        <table class="table table-responsive" style="margin-top: 30px;">
-            <th>SI NO:</th>
-            <th>Full Name:</th>
-            <th>Qualification</th>
-            <th>Skills</th>
-            <th>Applied Date</th>
-                        <?php
-            while($row=mysqli_fetch_array($q1)) {
-                $i=1;
-                $user_id=$row['user_id'];
-                $q2=mysqli_query($db1,"select * from jobseeker where user_id = $user_id");
+    <h3 class="text-center" style="margin-top: 50px;">Applicants list :</h3>
+    <div class="container" id="viewmain">
+    <div class="table-responsive">
+    <table class="table table-responsive table-striped">
+        <th>Name of the Applicant</th>
+        <th>Applied for:</th>
+        <th>Phone </th>
+        <th>Email </th>
+        <th>Date of Appliation</th>
+        
+        <th></th>
+        
+        
+    <?php
+    
+    while($q3row=mysqli_fetch_array($q3)){
+   // $query2=mysqli_query($db1,"select * from employer where eid = '$result[eid]'");
+   // $r2=mysqli_fetch_array($query2);
 
-                while ( $result = mysqli_fetch_array($q2) ) {
-                    $qsel=mysqli_query($db1,"select * from selection where job_id=$_GET[jobid] and user_id= $result[user_id]");
-                    $ressel=mysqli_fetch_array($qsel);
-                    echo " <tr> ";
-                    echo "<td>".$i."</td>";
-                    echo "<td> <a href='view_js.php?jsid=" . $result['user_id'] . "'>".$result['name']."</a></td>";
-                    echo "<td> <b>Basic Education: </b> " . $result['basic_edu'].",  <b>Master Education: </b> ".$result['master_edu']."</td>";
-                    echo "<td>" . $result['skills'] . "</td>";
-                    echo "<td>" . $row['date_applied']."</td>";
-                    
-                
-                       // $qrej=mysqli_query($db1,"select * from application where job_id=$_GET[jobid] and user_id= $result[user_id] ");
-                        //$rowrej=mysqli_fetch_array($qrej);
-                        //if($rowrej['status']==2)
-                        //    echo "<td> <h4 style='color: red'>Rejected</h4> </td>";
-                      //  echo "<td> <h4 style='color: green'>Selected</h4> </td>";
-                    
-                    echo "<tr><td colspan='6'><div id='message'></div></td></tr>";
-                    echo "</tr>";
-                }
-                $i++;
-            }
-            ?>
-        </table>
-        </div>
-    <?php } else {  echo " <div class='container'> <div class='alert alert-warning alert-dismissible' role='alert'>
-            <button type='button' class='close'  data-dismiss='alert' aria-label='Close'><span
-                    aria-hidden='true'>&times;</span></button>
-           <p style='font-size: 20px'><strong>Note:</strong> No one applied for this job yet!</p>
-        </div> </div>";
+    echo" <tr> ";
+        /*for ($i=0; $i <3 ; $i++) {*/
+        echo "<td>".$q3row['name']."</td>";
+        echo "<td>".$q3row['title']."</td>";
+        echo "<td>".$q3row['mobile']."</td>";
+        echo "<td>".$q3row['email']."</td>";
+        echo "<td>".$q3row['date']."</td>";
+      
+       // echo "<td>  <a style='color:#53066E;'  href='view.php?jid=".$q3row['id']."'><button type='button' class='btn btn-success'>View Job</button></a> </td>";
+        //<td><button type="button" class="btn btn-success btn-lg" onclick="apply(<?php echo $result['jobid']; )">
+        //<span class='glyphicon glyphicon-ok'></span> Apply for this Job
+         //</button></td>
+        
+        echo "</tr>";  
     }
-    ?>
+?>
+    </table>
+    </div>
+</div>  
+   
 </div>
 <!-- --------------------------------------------------------- contents end --------------------------------------------------------------------- -->
 </body>

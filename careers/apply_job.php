@@ -11,7 +11,7 @@ $email=$_POST['email'];
 $date=date("y-m-d");
 //echo  $jobid;
 $q1=mysqli_query($db1,"select * from jsee where mobile = $mobile AND email = $email ");
-if(mysqli_num_rows($q1)>=1){
+if(mysqli_num_rows($q1)){
     echo " <div class='alert alert-danger alert-dismissible' role='alert'>
             <button type='button' class='close'  data-dismiss='alert' aria-label='Close'><span
                     aria-hidden='true'>&times;</span></button>
@@ -26,11 +26,10 @@ else{
     $q2=mysqli_query($db1,"insert into jsee (name,mobile,jid,email,date) VALUES('$name','$mobile','$jobid','$email','$date')");
    // echo mysqli_error($db1);
     if($q2){
-        echo " <div class='alert alert-success alert-dismissible' role='alert'>
-            <button type='button' class='close'  data-dismiss='alert' aria-label='Close'><span
-                    aria-hidden='true'>&times;</span></button>
-           <p style='font-size: 20px'><strong>Note:</strong> You have successfully applied for this job!</p>
-        </div>";
+        $st=1;
+        header('location:viewofjs.php?jid='.$jobid.'&st='.$st);
+        
+
 
     }
     else{

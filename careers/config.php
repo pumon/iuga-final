@@ -1,6 +1,9 @@
 <?php
-include('../database.php');
 
+$host = "localhost";
+$user  = "test";
+$password =  "test";
+$database1 = "JobPortal";
 $database2 = "location";
 $db1 = new mysqli($host, $user, $password, $database1);
 /*if($db1->connect_errno > 0){
