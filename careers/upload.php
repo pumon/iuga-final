@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 include_once('config.php');
 $type=$_GET['type'];
 
@@ -35,7 +35,7 @@ $filename = $_FILES["file"]["name"];
 
             move_uploaded_file($_FILES["file"]["tmp_name"], "uploads/resume/" . $newfilename);
             mysqli_select_db($GLOBALS['db1'],"jobportal");
-            $cmd=mysqli_query($GLOBALS['db1'],"update jobseeker set Resume= '$newfilename' WHERE user_id=$_SESSION[jsid]");
+            $cmd=mysqli_query($GLOBALS['db1'],"update jsee set resume= '$newfilename'");
             if (!$cmd)
             {
                 echo("Error description: " . mysqli_error($db1));

@@ -6,10 +6,14 @@ $st=$_GET['st'];
 $jobid=$_GET['jid'];
 $query=mysqli_query($db1,"select * from jobs where jobid = $jobid");
 $result=mysqli_fetch_array($query);
-if ($st==1) {
-  $message = "You Have Successfully Applied For The Job";
-  echo "<script type='text/javascript'>alert('$message');</script>";
-}
+//if ($st==1) {
+//  $message = "You Have Successfully Applied For The Job";
+//  echo "<script type='text/javascript'>alert('$message');</script>";
+//}
+//else if ($st==2) {
+//  $message = "You Have Already Applied For this Job, Try applying for another one..";
+//  echo "<script type='text/javascript'>alert('$message');</script>";
+//}
 ?>
 <!DOCTYPE html>
   <html lang="zxx" class="no-js">
@@ -56,6 +60,41 @@ if ($st==1) {
 }
 </script>
  <style type="text/css">
+
+  .alert {
+    text-align: center;
+    width: 200%;
+    position: relative; 
+    left: 30px;
+    padding: 20px;
+    background-color: #C28ACD;
+    color: black;
+  }
+
+  .alert1 {
+    text-align: center;
+    width: 200%;
+    position: relative; 
+    left: 30px;
+    padding: 20px;
+    background-color: #D50573;
+    color: black;
+  }
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .closebtn:hover {
+    color: black;
+  }
+
    .bl {
       color: black;
       font-size: 20px;
@@ -78,11 +117,11 @@ if ($st==1) {
               </div>
               <nav id="nav-menu-container">
                 <ul class="nav-menu">
-                <li class="menu-active"><a href="index.php">Home</a></li>
-                <li><a href="about.html">About</a></li>   
-            <li> <a href="services.html">Services</a></li>
-            <li><a href="projects.php">Projects</a></li>  
-            <li><a href="contact.html">Contact</a></li>
+                <li class="menu-active"><a href="../index.php">Home</a></li>
+                <li><a href="../about.html">About</a></li>   
+            <li> <a href="../services.html">Services</a></li>
+            <li><a href="../projects.php">Projects</a></li>  
+            <li><a href="../contact.html">Contact</a></li>
             <li> <a href="./careers/">Careers</a></li>
                    
                 </ul>
@@ -92,13 +131,13 @@ if ($st==1) {
         </header><!-- #header -->
 
       <!-- start banner Area -->
-      <section class="relative" id="top" style="width: 100%; height: 500px; background-image: 'img/bg.png'">  
+      <section class="relative" id="home" style="width: 100%; height: 500px; background-image: 'img/bg.png'">  
         <div class="overlay overlay-bg"></div>
         <div class="container">       
           <div class="row d-flex align-items-center justify-content-center">
             <div class="about-content col-lg-12">
               <h1 class="text-white"> Careers </h1> 
-                <a class="primary-btn" href="index1.php?#jobs">Go Back to Viewing Other Jobs</a>
+                <a class="primary-btn" href="index.php?#jobs">Go Back to Viewing Other Jobs</a>
             </div>  
           </div>
         </div>
@@ -158,7 +197,7 @@ if ($st==1) {
     
   
   <section id="apply" style="background: #04091e;height: 500px;">
-    <div class="container" style="padding-top: 100px;">
+    <div class="container" style="padding-top: 70px;">
       <div class="row">
         <div class="col-lg-12 text-center">
           <h2 class="section-heading text-uppercase" style="color:#DCDCDE;">Enter Details to Apply for the job</h2>
@@ -178,7 +217,7 @@ if ($st==1) {
 
                 
 
-                <div class="form-group" style="position: relative; left: 300px; padding-top: 50px; " >
+                <div class="form-group" style="position: relative; left: 300px; padding-top: 10px; " >
                   <input class="form-control" name="name" id="name" type="text" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name.">
                   <p class="help-block text-danger"></p>
                 </div>
@@ -193,17 +232,25 @@ if ($st==1) {
                   <p class="help-block text-danger"></p>
                 </div>
 
+                
+                
+
               </div>
               </div>
 
-
+                
+                  <!--<h2>Upload Your Resume:</h2>
+                <input  class="click-btn btn btn-default"' style="position: absolute; left: 300px;" type="file" name="myFile"/>
+                 -->
+                 
+                
               <div class="col-md-6">
               </div>
               
-              <div class="clearfix" style="padding-top: 50px;"></div>
+              <div class="clearfix" style="position: absolute;"></div>
               <div class="col-lg-12 text-center">
                 <div id="success"></div>
-                <input type="submit" class='primary-btn' value="Apply For This Job">
+                <input type="submit" style="position: absolute; top: 70px; left: 500px;" class='primary-btn' value="Apply For This Job..">
                         <span class='glyphicon glyphicon-ok'></span>
                 </button>
                 </div>

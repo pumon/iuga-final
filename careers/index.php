@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 include_once('config.php');
 session_start();
@@ -72,11 +72,11 @@ $result=mysqli_fetch_array($query);
 				      </div>
 				      <nav id="nav-menu-container">
 				        <ul class="nav-menu">
-								<li class="menu-active"><a href="index.php">Home</a></li>
-								<li><a href="about.html">About</a></li>		
-					  <li> <a href="services.html">Services</a></li>
-					  <li><a href="projects.php">Projects</a></li>	
-					  <li><a href="contact.html">Contact</a></li>
+								<li class="menu-active"><a href="../index.php">Home</a></li>
+								<li><a href="../about.html">About</a></li>		
+					  <li> <a href="../services.html">Services</a></li>
+					  <li><a href="../projects.php">Projects</a></li>	
+					  <li><a href="../contact.html">Contact</a></li>
 					  <li> <a href="./careers/">Careers</a></li>
 			             
 				        </ul>
@@ -86,13 +86,13 @@ $result=mysqli_fetch_array($query);
 			  </header><!-- #header -->
 
 			<!-- start banner Area -->
-			<section class="relative"  style="width: 100%; height: 500px;">	
+			<section class="relative"  id="home">	
 				<div class="overlay overlay-bg"></div>
 				<div class="container">				
 					<div class="row d-flex align-items-center justify-content-center">
 						<div class="about-content col-lg-12">
-							<h1 class="text-white"> Carrers	</h1>	
-							<a class="primary-btn" href="index1.php?#jobs">View Job Openings</a> 
+							<h1 class="text-white"> Carrers	</h1><br>
+							<a class="primary-btn" href="index.php#jobs">View Job Openings</a> 
 						</div>	
 					</div>
 				</div>
@@ -101,10 +101,12 @@ $result=mysqli_fetch_array($query);
 				
 
 			<!-- Start project Area -->
-            <section class=" section-gap" id="jobs" >
-				<h1 style="padding-left: 640px; padding-bottom: 40px;"> Job Openings</h1>	
+            <section class="section-gap" id="jobs" >
+				<h1 class=" row justify-content-center align-items-center">
+							Job Openings			
+						</h1>	
 			    <div class="table-responsive">
-			    <table class="table table-responsive table-striped" style="padding-left: 60px;">
+			    <table class=" table table-responsive table-striped" >
 			        <th class="bl">Job Title</th>
 			        <th class="bl">Job Description</th>
 			        <th class="bl">Date of Posting</th>
