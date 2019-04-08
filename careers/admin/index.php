@@ -1,10 +1,8 @@
 <?php
 
 $st=$_GET['st'];
-include_once('config.php');
+include('config.php');
 $query=mysqli_query($db1,"select * from jobs");
-//$result=mysqli_fetch_array($query);
-//echo $result['title'];
 
 ?>
 
@@ -14,7 +12,7 @@ $query=mysqli_query($db1,"select * from jobs");
         <!-- Mobile Specific Meta -->
         <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
         <!-- Favicon-->
-        <link rel="shortcut icon" href="img/fav.png">
+        <link rel="shortcut icon" href="img/iugale.png">
         <!-- Author Meta -->
         <meta name="author" content="codepixer">
         <!-- Meta Description -->
@@ -115,13 +113,13 @@ $query=mysqli_query($db1,"select * from jobs");
             }
              ?>
                 <section class=" section-gap" id="jobs" >
-                <h1 style="padding-left: 550px; padding-bottom: 40px;"> Job Openings</h1>   
-                <div class="table-responsive">
-                <table class="table table-responsive table-striped" style="padding-left: 60px;">
-                    <th class="bl">Job Title</th>
-                    <th class="bl" style="width: 620px;">Job Description</th>
-                    <th class="bl">Date of Posting</th>
-                    <th class="bl" colspan="3">   </th>
+                <div class="container" id="viewmain">
+			    <div class="table-responsive">
+    <table style="padding-top: 25px;" class="table table-responsive table-striped">
+			        <th class="bl"style="width: 620px;">Job Title</th>
+			        <th class="bl"style="width: 620px;">Job Description</th>
+			        <th class="bl">Date of Posting</th>
+			        <th class="bl" colspan="3"> Actions  </th>
                 <?php
                 while($result=mysqli_fetch_array($query)){
                // $query2=mysqli_query($db1,"select * from employer where eid = '$result[eid]'");

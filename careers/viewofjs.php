@@ -122,7 +122,7 @@ $result=mysqli_fetch_array($query);
             <li> <a href="../services.html">Services</a></li>
             <li><a href="../projects.php">Projects</a></li>  
             <li><a href="../contact.html">Contact</a></li>
-            <li> <a href="./careers/">Careers</a></li>
+            <li> <a href="index.php">Careers</a></li>
                    
                 </ul>
               </nav><!-- #nav-menu-container -->            

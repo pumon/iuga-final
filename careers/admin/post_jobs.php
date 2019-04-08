@@ -8,7 +8,7 @@ include_once('config.php');
         <!-- Mobile Specific Meta -->
         <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
         <!-- Favicon-->
-        <link rel="shortcut icon" href="img/fav.png">
+        <link rel="shortcut icon" href="img/iugale.png">
         <!-- Author Meta -->
         <meta name="author" content="codepixer">
         <!-- Meta Description -->
