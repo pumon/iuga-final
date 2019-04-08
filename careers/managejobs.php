@@ -94,7 +94,7 @@ if($st==1){
               </header><!-- #header -->
 
             <!-- start banner Area -->
-            <section class="relative"  style="color: #FEB801; width: 100%; height: 500px;"> 
+            <section class="relative" id="home"> 
                 <div class="overlay overlay-bg"></div>
                 <div class="container">             
                     <div class="row d-flex align-items-center justify-content-center">

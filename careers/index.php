@@ -1,7 +1,7 @@
  <?php
 
 include_once('config.php');
-session_start();
+
 $query=mysqli_query($db1,"select * from jobs");
 $result=mysqli_fetch_array($query);
 ?>
@@ -77,7 +77,7 @@ $result=mysqli_fetch_array($query);
 					  <li> <a href="../services.html">Services</a></li>
 					  <li><a href="../projects.php">Projects</a></li>	
 					  <li><a href="../contact.html">Contact</a></li>
-					  <li> <a href="./careers/">Careers</a></li>
+					  <li> <a href="index.php">Careers</a></li>
 			             
 				        </ul>
 				      </nav><!-- #nav-menu-container -->		    		
@@ -86,13 +86,13 @@ $result=mysqli_fetch_array($query);
 			  </header><!-- #header -->
 
 			<!-- start banner Area -->
-			<section class="relative"  id="home">	
+			<section class="relative" id="home" >	
 				<div class="overlay overlay-bg"></div>
 				<div class="container">				
 					<div class="row d-flex align-items-center justify-content-center">
 						<div class="about-content col-lg-12">
-							<h1 class="text-white"> Carrers	</h1><br>
-							<a class="primary-btn" href="index.php#jobs">View Job Openings</a> 
+							<h1 class="text-white"> Carrers	</h1>	
+							<a class="primary-btn" href="index.php?#jobs">View Job Openings</a> 
 						</div>	
 					</div>
 				</div>
@@ -101,14 +101,17 @@ $result=mysqli_fetch_array($query);
 				
 
 			<!-- Start project Area -->
-            <section class="section-gap" id="jobs" >
-				<h1 class=" row justify-content-center align-items-center">
-							Job Openings			
-						</h1>	
+            <section class=" section-gap" id="jobs" >
+						<div class="row justify-content-center">
+						<div class="col-md-12 pb-60 header-text text-center">
+							<h1 class="mb-10">Job Openings</h1>
+						</div>
+					</div>		
+					<div class="container" id="viewmain">
 			    <div class="table-responsive">
-			    <table class=" table table-responsive table-striped" >
-			        <th class="bl">Job Title</th>
-			        <th class="bl">Job Description</th>
+    <table style="padding-top: 25px;" class="table table-responsive table-striped">
+			        <th class="bl"style="width: 620px;">Job Title</th>
+			        <th class="bl"style="width: 620px;">Job Description</th>
 			        <th class="bl">Date of Posting</th>
 			        <th class="bl" colspan="3"> Actions  </th>
 			    <?php
@@ -131,8 +134,8 @@ $result=mysqli_fetch_array($query);
 			    }
 			?>
     </table>
-    </div>
-</div>  
+</div> 
+</div> 
 						
 			</section>
 			<!-- End project Area -->
@@ -228,7 +231,7 @@ $result=mysqli_fetch_array($query);
 								<h6>Newsletter</h6>
 								<p>Stay update with our latest</p>
 								<div>
-									<form  method="post" id='news' name="news" class="form-inline" action="news.php">
+									<form  method="post" id='news' name="news" class="form-inline" action="../news.php">
 										<input class="form-control" name="email" placeholder="Enter Email" onfocus="this.placeholder = ''" type="text" >
 			                      <button class="click-btn btn btn-default" onclick="validate();"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
 			                            	<div style="position: absolute; left: -5000px;">

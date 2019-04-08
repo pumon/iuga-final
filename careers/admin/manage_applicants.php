@@ -2,7 +2,7 @@
 include('config.php');
 //include_once('notify.php');
 
-$q3=mysqli_query($db1,"select id, name, mobile, email, date, title from jsee, jobs where jid=jobid");
+$q3=mysqli_query($db1,"select id, name, title, mobile, email, date from jsee, jobs where jobid=jid");
 $q3row=mysqli_fetch_array($q3);
 
 
@@ -66,7 +66,7 @@ $q3row=mysqli_fetch_array($q3);
 
         </head>
         <body>  
-              <header id="header" id="home">
+              <header id="header">
                 <div class="container main-menu">
                     <div class="row align-items-center justify-content-between d-flex">
                       <div id="logo">
@@ -75,11 +75,11 @@ $q3row=mysqli_fetch_array($q3);
                       <nav id="nav-menu-container">
                         <ul class="nav-menu">
                                 <li class="menu-active"><a href="index.php">Home</a></li>
-                                <li><a href="managejobs.php">Manage Jobs</a></li>     
+                                    
                       <li> <a href="manage_applicants.php">See Applicants</a></li>
                       <li><a href="post_jobs.php">Post Jobs</a></li>  
                       
-                      <li> <a href="./careers/">Careers</a></li>
+                     
                          
                         </ul>
                       </nav><!-- #nav-menu-container -->                    
@@ -88,30 +88,31 @@ $q3row=mysqli_fetch_array($q3);
               </header><!-- #header -->
 
             <!-- start banner Area -->
-            <section class="relative"  style="width: 100%; height: 500px;"> 
+            <section class="relative"  id="home"> 
                 <div class="overlay overlay-bg"></div>
                 <div class="container">             
                     <div class="row d-flex align-items-center justify-content-center">
                         <div class="about-content col-lg-12">
-                            <h1 class="text-white"> Carrers </h1>   
-                            <a class="primary-btn" href="index1.php?#jobs">View Job Openings</a> 
+                            <h1 class="text-white"> Manage Applicants </h1><br/>   
+                           
                         </div>  
                     </div>
                 </div>
             </section>
             <!-- End banner Area -->    
-        <div class="container-fluid">
+        <div class="container-fluid" id="#jobs">
     <h3 class="text-center" style="margin-top: 50px;">Applicants list :</h3>
     <div class="container" id="viewmain">
     <div class="table-responsive">
-    <table class="table table-responsive table-striped">
-        <th>Name of the Applicant</th>
-        <th>Applied for:</th>
-        <th>Phone </th>
-        <th>Email </th>
-        <th>Date of Appliation</th>
+    <table style="padding-top: 50px;" class="table table-responsive table-striped">
+        <th style="width: 280px;">Name of the Applicant</th>
+        <th style="width: 200px;">Applied for:</th>
+        <th style="width: 200px;">Phone </th>
+        <th style="width: 300px;">Email </th>
+
+        <th style="width: 200px;">Date of Appliation</th>
         
-        <th></th>
+       
         
         
     <?php
@@ -127,7 +128,7 @@ $q3row=mysqli_fetch_array($q3);
         echo "<td>".$q3row['mobile']."</td>";
         echo "<td>".$q3row['email']."</td>";
         echo "<td>".$q3row['date']."</td>";
-        echo "<td><a href=./uploads/$name>Click</a></td>";
+        
       
        // echo "<td>  <a style='color:#53066E;'  href='view.php?jid=".$q3row['id']."'><button type='button' class='btn btn-success'>View Job</button></a> </td>";
         //<td><button type="button" class="btn btn-success btn-lg" onclick="apply(<?php echo $result['jobid']; )">
@@ -142,12 +143,28 @@ $q3row=mysqli_fetch_array($q3);
 </div>  
    
 </div>
-<!-- --------------------------------------------------------- contents end --------------------------------------------------------------------- -->
-</body>
-<link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
-<link href="css/main.css" rel="stylesheet">
-<link href="css/employer.css" rel="stylesheet">
-<script src="js/jquery-1.12.0.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-</html>
+
+
+
+      <script src="js/vendor/jquery-2.2.4.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="js/vendor/bootstrap.min.js"></script>      
+      <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+        <script src="js/easing.min.js"></script>      
+      <script src="js/hoverIntent.js"></script>
+      <script src="js/superfish.min.js"></script> 
+      <script src="js/jquery.ajaxchimp.min.js"></script>
+      <script src="js/jquery.magnific-popup.min.js"></script> 
+      <script src="js/owl.carousel.min.js"></script>  
+      <script src="js/hexagons.min.js"></script>              
+      <script src="js/jquery.nice-select.min.js"></script>  
+      <script src="js/jquery.counterup.min.js"></script>
+      <script src="js/waypoints.min.js"></script>             
+      <script src="js/mail-script.js"></script> 
+      <script src="js/main.js"></script>  
+      <script src="js/index.js"></script>
+      
+
+    </body>
+  </html>
 

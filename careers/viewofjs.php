@@ -131,7 +131,7 @@ $result=mysqli_fetch_array($query);
         </header><!-- #header -->
 
       <!-- start banner Area -->
-      <section class="relative" id="home" style="width: 100%; height: 500px; background-image: 'img/bg.png'">  
+      <section class="relative" id="top" style="width: 100%; height: 500px; background-image: 'img/bg.png'">  
         <div class="overlay overlay-bg"></div>
         <div class="container">       
           <div class="row d-flex align-items-center justify-content-center">
@@ -237,7 +237,27 @@ $result=mysqli_fetch_array($query);
 
               </div>
               </div>
-
+              <?php
+              if($st==2){
+              ?>
+              <div>
+                <h3 style="background-color: #ECA9A9; position: absolute;left: 200px;width: 800px; padding-left: 100px;padding-top: 10px;padding-bottom: 10px;align-self: center;border-radius: 15px; color: black;">OOPS! You have already applied for this job<span style="left: 70px" onclick="this.parentElement.style.display='none'"
+                class="primary-btn">&times;</span> </h3>
+                
+              </div>
+              <?php
+            }
+            
+            if($st==1){
+              ?>
+              <div>
+                <h3 style="background-color: #A9ECAA; position: absolute;left: 200px;width: 800px; padding-left: 250px;padding-top: 10px;padding-bottom: 10px;align-self: center;border-radius: 15px; color: black;">Applied Successfully<span style="left: 180px" onclick="this.parentElement.style.display='none'"
+                class="primary-btn">&times;</span> </h3>
+                
+              </div>
+              <?php
+            }
+            ?>
                 
                   <!--<h2>Upload Your Resume:</h2>
                 <input  class="click-btn btn btn-default"' style="position: absolute; left: 300px;" type="file" name="myFile"/>
