@@ -113,7 +113,7 @@ $result=mysqli_fetch_array($query);
 			        <th class="bl"style="width: 620px;">Job Title</th>
 			        <th class="bl"style="width: 620px;">Job Description</th>
 			        <th class="bl">Date of Posting</th>
-			        <th class="bl" colspan="3"> Actions  </th>
+			        <th class="bl" style="width: 800px;"colspan="3"> Actions  </th>
 			    <?php
 			    while($result=mysqli_fetch_array($query)){
 			   // $query2=mysqli_query($db1,"select * from employer where eid = '$result[eid]'");
@@ -124,7 +124,7 @@ $result=mysqli_fetch_array($query);
 			        echo "<td >".$result['title']."</td>";
 			        echo "<td >".substr($result['jobdesc'],0,130)." ...</td>";
 			        echo "<td >".$result['postdate']."</td>";
-			        echo "<td >  <a class='primary-btn' href='viewofjs.php?jid=".$result['jobid']."&st=0'>View Job</a> </td>";
+			        echo "<td >  <a class='primary-btn' href='viewofjs.php?jid=".$result['jobid']."&st=0'>View</a> </td>";
 			        //<a class="primary-btn" href="contact.html">Get Started Now</a>
 			        //<td><button type="button" class="btn btn-success btn-lg" onclick="apply(<?php echo $result['jobid']; )">
 			        //<span class='glyphicon glyphicon-ok'></span> Apply for this Job
