@@ -1,11 +1,14 @@
 <?php
-
+$jid=$_GET['jid'];
 include_once('config.php');
 session_start();
-$st=$_GET['st'];
-$jobid=$_GET['jid'];
-$query=mysqli_query($db1,"select * from jobs where jobid = $jobid");
+
+
+$query=mysqli_query($db1,"select s.id, s.name, q.title, s.mobile, s.email, s.type, s.result, s.qual, s.experience, s.date from jsee as s, jobs as q where jobid=jid");
+
+
 $result=mysqli_fetch_array($query);
+ echo $result['result'].$result['id'];
 //if ($st==1) {
 //  $message = "You Have Successfully Applied For The Job";
 //  echo "<script type='text/javascript'>alert('$message');</script>";
@@ -21,7 +24,7 @@ $result=mysqli_fetch_array($query);
     <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
     <!-- Favicon-->
-    <link rel="shortcut icon" href="img/fav.png">
+    <link rel="shortcut icon" href="img/iugale.png">
     <!-- Author Meta -->
     <meta name="author" content="codepixer">
     <!-- Meta Description -->
@@ -122,7 +125,7 @@ $result=mysqli_fetch_array($query);
             <li> <a href="../services.html">Services</a></li>
             <li><a href="../projects.php">Projects</a></li>  
             <li><a href="../contact.html">Contact</a></li>
-            <li> <a href="index.php">Careers</a></li>
+            <li> <a href="./careers/">Careers</a></li>
                    
                 </ul>
               </nav><!-- #nav-menu-container -->            
@@ -136,8 +139,8 @@ $result=mysqli_fetch_array($query);
         <div class="container">       
           <div class="row d-flex align-items-center justify-content-center">
             <div class="about-content col-lg-12">
-              <h1 class="text-white"> Careers </h1> 
-                <a class="primary-btn" href="index.php?#jobs">Go Back to Viewing Other Jobs</a>
+              <h1 class="text-white"> View Applicant </h1> 
+               
             </div>  
           </div>
         </div>
@@ -147,195 +150,44 @@ $result=mysqli_fetch_array($query);
     
     
      <div id="tablecontent" style="padding-top: 20px; padding-left:50px; ">
-    <h1 style="text-align:center;"> Job Details </h1>
+    <h1 style="text-align:center;"> Applicant Details </h1>
     <table class="table table-responsive" style="padding-left: 10px">
         <tr>
-            <td class="bl">Designation:</td>
-            <td class="bl2"><?php echo $result['title']; ?></td>
+            <td class="bl">Name Of The Candidate:</td>
+            <td class="bl2"><?php echo $result['name']; ?></td>
         </tr>
         <tr>
-            <td class="bl">Date of Posting:</td>
-            <td class="bl2"><?php echo $result['postdate']; ?></td>
+            <td class="bl">Applied On:</td>
+            <td class="bl2"><?php echo $result['date']; ?></td>
         </tr>
         <tr>
-            <td class="bl">Number of Vacancies: </td>
-            <td class="bl2"><?php echo $result['vacno']; ?> </td>
+            <td class="bl">Applied For: </td>
+            <td class="bl2"><?php echo $result['title']; ?> </td>
         </tr>
         <tr>
-            <td class="bl">Job Description:</td>
-            <td class="bl2"><?php echo $result['jobdesc']; ?></td>
+            <td class="bl">E-mail:</td>
+            <td class="bl2"><?php echo $result['email']; ?></td>
         </tr>
         <tr>
-            <td class="bl">Required Experience:</td>
-            <td class="bl2"><?php echo $result['experience']." "; ?>Years</td>
+            <td class="bl">Mobile-No:</td>
+            <td class="bl2"><?php echo $result['mobile'];?></td>
         </tr>
         <tr>
-            <td class="bl">Basic Pay:</td>
-            <td class="bl2"><?php echo $result['basicpay']; ?></td>
+            <td class="bl">Qualification:</td>
+            <td class="bl2"><?php echo $result['qual'];?></td>
         </tr>
         <tr>
-            <td class="bl">Functional Area:</td>
-            <td class="bl2"><?php echo $result['fnarea']; ?></td>
-        </tr>
-        
-        
-        <tr>
-            <td class="bl">Required UG Qualification:</td>
-            <td class="bl2"><?php echo $result['ugqual']; ?></td>
+            <td class="bl">Aggregate:</td>
+            <td class="bl2"><?php echo $result['result'].$result['type'];?></td>
         </tr>
         <tr>
-            <td class="bl">Required PG Qualification:</td>
-            <td class="bl2"><?php echo $result['pgqual']; ?></td>
-        </tr>
-        <tr>
-            <td class="bl">Desired Candidate Profile:</td>
-            <td class="bl2"><?php echo $result['profile']; ?></td>
+            <td class="bl">Experience:</td>
+            <td class="bl2"><?php echo $result['experience'];?></td>
         </tr>
 
     </table>
 </div>
     
-  
-  <section id="apply" style="background: #04091e;height: 650px;">
-    <div class="container" style="padding-top: 70px;">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase" style="color:#DCDCDE;">Enter Details to Apply for the job</h2>
-          
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12">
-            <form action="apply_job.php"  method="POST">
-            <div class="row">
-              <div class="col-md-6">
-
-                <div class="form-group">
-                  <input class="form-control" name="jid" value= <?php echo $jobid ?>  type="hidden"  required="required" >
-                  <p class="help-block text-danger"></p>
-                </div>
-
-                
-
-                <div class="form-group" style="position: relative; left: 300px; padding-top: 10px; " >
-                  <input class="form-control" name="name" id="name" type="text" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name.">
-                  <p class="help-block text-danger"></p>
-                </div>
-
-                <div class="form-group" style="position: relative; left: 300px;">
-                  <input class="form-control" id="email" name="email" type="email" placeholder="Your Email *" required="required" data-validation-required-message="Please enter your email address.">
-                  <p class="help-block text-danger"></p>
-                </div>
-
-                <div class="form-group" style="position: relative; left: 300px;">
-                  <input class="form-control" id="mobno" name="mobno" type="tel" placeholder="Your Phone *" required="required" data-validation-required-message="Please enter your phone number.">
-                  <p class="help-block text-danger"></p>
-                </div>
-
-                <div class="form-inline form-group"  style="position: relative; left: 300px;">
-                       <h3 style="color: white; padding-right: 100px;">Qualification :    </h3>
-                          <div class="col-md-20">
-                               <select style="width: 250px; position: relative; left: 50px;" name="degree" id="degree" class=" form-control" required>
-                       <option value="" label="Select">Select</option>
-                       <option value="B.A">B.A</option>
-                       <option value="B.Arch">B.Arch</option>
-                       <option value="BCA">BCA</option>
-                       <option value="B.B.A">B.B.A</option>
-                       <option value="B.Com">B.Com</option>
-                       <option value="B.Ed">B.Ed</option>
-                       <option value="BDS">BDS</option>
-                       <option value="BHM">BHM</option>
-                       <option value="B.Pharma">B.Pharma</option>
-                       <option value="B.Sc">B.Sc</option>
-                       <option value="B.Tech/B.E.">B.Tech/B.E.</option>
-                       <option value="LLB">LLB</option>
-                       <option value="MBBS">MBBS</option>
-                       <option value="Diploma">Diploma</option>
-                       <option value="BVSC">BVSC</option>
-                       <option value="Other">Other</option>
-                       </select>
-                      </div>
-                     </div>
-
-                
-
-                
-
-                 <div class="form-group" style="position: relative; left: 300px;">
-                  <input style="width: 350px;" class="form-control" id="cgpa" name="cgpa" type="text" placeholder="CGPA/Percentage*" required="required" data-validation-required-message="Please enter your cgpa/percentage">
-                  <select class="form-control"  style="width: 200px;position: absolute;left: 370px;bottom: 0px;" required="required" data-validation-required-message="Please enter your Work Experience" name="type" id="type">
-                                   <option value=""> -Select- </option>
-                                    <option value="%">% </option>
-                                      <option value="CGPA">CGPA</option>
-                               </select> 
-                  <p class="help-block text-danger"></p>
-                </div>
-
-                <div class="form-inline form-group"  style="position: relative; left: 300px;">
-                       <h3 style="color: white; padding-right: 100px;">Work Experience :    </h3>
-                          <div class="col-md-20">
-                               <select class="form-control"  style="width: 250px;" required="required" data-validation-required-message="Please enter your Work Experience" name="exp" id="exp">
-                                   <option value=""> -Select- </option>
-                                    <option value="Fresher">Fresher </option>
-                                      <option value="1">1 </option>
-                                        <option value="2">2 </option>
-                                          <option value="3">3 </option>
-                                            <option value="4">4 </option>
-                                              <option value="5"> 5</option>
-                                               <option value="6">6 </option>
-                                                <option value="7">7 </option>
-                                                   <option value="7 above"> above 7</option>
-                               </select> 
-                           </div>
-                     </div>
-                
-
-              </div>
-              </div>
-              <?php
-              if($st==2){
-              ?>
-              <div>
-                <h3 style="background-color: #ECA9A9; position: absolute;left: 200px;width: 800px; padding-left: 100px;padding-top: 10px;padding-bottom: 10px;align-self: center;border-radius: 15px; color: black;">OOPS! You have already applied for this job<span style="left: 70px" onclick="this.parentElement.style.display='none'"
-                class="primary-btn">&times;</span> </h3>
-                
-              </div>
-              <?php
-            }
-            
-            if($st==1){
-              ?>
-              <div>
-                <h3 style="background-color: #A9ECAA; position: absolute;left: 200px;width: 800px; padding-left: 250px;padding-top: 10px;padding-bottom: 10px;align-self: center;border-radius: 15px; color: black;">Applied Successfully<span style="left: 180px" onclick="this.parentElement.style.display='none'"
-                class="primary-btn">&times;</span> </h3>
-                
-              </div>
-              <?php
-            }
-            ?>
-                
-                  <!--<h2>Upload Your Resume:</h2>
-                <input  class="click-btn btn btn-default"' style="position: absolute; left: 300px;" type="file" name="myFile"/>
-                 -->
-                 
-                
-              <div class="col-md-6">
-              </div>
-              
-              <div class="clearfix" style="position: absolute;"></div>
-              <div class="col-lg-12 text-center">
-                <div id="success"></div>
-                <input type="submit" style="position: absolute; top: 70px; left: 500px;" class='primary-btn' value="Apply For This Job..">
-                        <span class='glyphicon glyphicon-ok'></span>
-                </button>
-                </div>
-              
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
 
     
       <!-- Start feedback Area -->

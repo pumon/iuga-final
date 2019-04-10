@@ -3,7 +3,7 @@ include('config.php');
 //include_once('notify.php');
 
 $q3=mysqli_query($db1,"select id, name, title, mobile, email, date from jsee, jobs where jobid=jid");
-$q3row=mysqli_fetch_array($q3);
+
 
 
 ?>
@@ -101,7 +101,7 @@ $q3row=mysqli_fetch_array($q3);
             </section>
             <!-- End banner Area -->    
         <div class="container-fluid" id="#jobs">
-    <h3 class="text-center" style="margin-top: 50px;">Applicants list :</h3>
+    <h3 class="text-center" style="margin-top: 50px;">Applicants list</h3>
     <div class="container" id="viewmain">
     <div class="table-responsive">
     <table style="padding-top: 50px;" class="table table-responsive table-striped">
@@ -128,9 +128,9 @@ $q3row=mysqli_fetch_array($q3);
         echo "<td>".$q3row['mobile']."</td>";
         echo "<td>".$q3row['email']."</td>";
         echo "<td>".$q3row['date']."</td>";
-        
+        echo "<td >  <a class='primary-btn' href='view_applicant.php?jid=".$q3row['id']."'>View</a> </td>";
       
-       // echo "<td>  <a style='color:#53066E;'  href='view.php?jid=".$q3row['id']."'><button type='button' class='btn btn-success'>View Job</button></a> </td>";
+       //echo "<td>  <a style='color:#53066E;'  href='view.php?jid=".$q3row['id']."'><button type='button' class='btn btn-success'>View Job</button></a> </td>";
         //<td><button type="button" class="btn btn-success btn-lg" onclick="apply(<?php echo $result['jobid']; )">
         //<span class='glyphicon glyphicon-ok'></span> Apply for this Job
          //</button></td>

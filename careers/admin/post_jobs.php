@@ -160,14 +160,15 @@ include_once('config.php');
                          <td> <div class="col-md-20">
                                <select class="form-control" name="exp" required name="exp" id="exp">
                                    <option value=""> -Select- </option>
-                                    <option value="1">1 </option>
-                                     <option value="2">2 </option>
-                                      <option value="3">3 </option>
-                                       <option value="4">4 </option>
-                                        <option value="5"> 5</option>
-                                         <option value="6">6 </option>
-                                          <option value="7">7 </option>
-                                           <option value="7 above"> above 7</option>
+                                    <option value="Fresher">Fresher </option>
+                                      <option value="1">1 </option>
+                                        <option value="2">2 </option>
+                                          <option value="3">3 </option>
+                                            <option value="4">4 </option>
+                                              <option value="5"> 5</option>
+                                               <option value="6">6 </option>
+                                                <option value="7">7 </option>
+                                                   <option value="7 above"> above 7</option>
                                </select> <span> Minimum Years </span>
                            </div>
                      </div></td></tr>

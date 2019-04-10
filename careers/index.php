@@ -3,7 +3,7 @@
 include_once('config.php');
 
 $query=mysqli_query($db1,"select * from jobs");
-$result=mysqli_fetch_array($query);
+
 ?>
 <!DOCTYPE html>
 	<html lang="zxx" class="no-js">
@@ -86,13 +86,14 @@ $result=mysqli_fetch_array($query);
 			  </header><!-- #header -->
 
 			<!-- start banner Area -->
-			<section class="relative" id="home" >	
+			<h1 class="text-white"> Careers	</h1>
+			<section class="relative" id="home">	
 				<div class="overlay overlay-bg"></div>
 				<div class="container">				
 					<div class="row d-flex align-items-center justify-content-center">
 						<div class="about-content col-lg-12">
-							<h1 class="text-white"> Carrers	</h1>	
-							<a class="primary-btn" href="index.php?#jobs">View Job Openings</a> 
+							<h1 class="text-white"> Careers	</h1>	
+							
 						</div>	
 					</div>
 				</div>
@@ -102,42 +103,41 @@ $result=mysqli_fetch_array($query);
 
 			<!-- Start project Area -->
             <section class=" section-gap" id="jobs" >
-						<div class="row justify-content-center">
+            	<div class="row justify-content-center">
 						<div class="col-md-12 pb-60 header-text text-center">
-							<h1 class="mb-10">Job Openings</h1>
-						</div>
-					</div>		
-					<div class="container" id="viewmain">
+							<h1 class="mb-10"> JobOpenings</h1></div></div>
+                <div class="container" id="viewmain">
 			    <div class="table-responsive">
     <table style="padding-top: 25px;" class="table table-responsive table-striped">
 			        <th class="bl"style="width: 620px;">Job Title</th>
 			        <th class="bl"style="width: 620px;">Job Description</th>
 			        <th class="bl">Date of Posting</th>
-			        <th class="bl" style="width: 800px;"colspan="3"> Actions  </th>
-			    <?php
-			    while($result=mysqli_fetch_array($query)){
-			   // $query2=mysqli_query($db1,"select * from employer where eid = '$result[eid]'");
-			   // $r2=mysqli_fetch_array($query2);
+			        <th class="bl" colspan="3"> Actions  </th>
+                <?php
+                while($result=mysqli_fetch_array($query)){
+               // $query2=mysqli_query($db1,"select * from employer where eid = '$result[eid]'");
+               // $r2=mysqli_fetch_array($query2);
 
-			    echo" <tr> ";
-			        /*for ($i=0; $i <3 ; $i++) {*/
-			        echo "<td >".$result['title']."</td>";
-			        echo "<td >".substr($result['jobdesc'],0,130)." ...</td>";
-			        echo "<td >".$result['postdate']."</td>";
-			        echo "<td >  <a class='primary-btn' href='viewofjs.php?jid=".$result['jobid']."&st=0'>View</a> </td>";
-			        //<a class="primary-btn" href="contact.html">Get Started Now</a>
-			        //<td><button type="button" class="btn btn-success btn-lg" onclick="apply(<?php echo $result['jobid']; )">
-			        //<span class='glyphicon glyphicon-ok'></span> Apply for this Job
-			         //</button></td>
-			        
-			        echo "</tr>";
-			    }
-			?>
+                echo" <tr> ";
+                    /*for ($i=0; $i <3 ; $i++) {*/
+                    echo "<td >".$result['title']."</td>";
+                    echo "<td >".substr($result['jobdesc'],0,100)." ...</td>";
+                    echo "<td >".$result['postdate']."</td>";
+                    echo "<td >  <a class='primary-btn' href='viewofjs.php?jid=".$result['jobid']."&st=0'>Job</a> </td>";
+                   
+                    //<a class="primary-btn" href="contact.html">Get Started Now</a>
+                    //<td><button type="button" class="btn btn-success btn-lg" onclick="apply(<?php echo $result['jobid']; )">
+                    //<span class='glyphicon glyphicon-ok'></span> Apply for this Job
+                     //</button></td>
+                    
+                    echo "</tr>";
+                }
+            ?>
     </table>
-</div> 
-</div> 
-						
-			</section>
+    </div>
+</div>  
+                        
+            </section>
 			<!-- End project Area -->
 
 		

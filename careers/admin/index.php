@@ -131,7 +131,7 @@ $query=mysqli_query($db1,"select * from jobs");
                     echo "<td >".substr($result['jobdesc'],0,100)." ...</td>";
                     echo "<td >".$result['postdate']."</td>";
                     echo "<td >  <a class='primary-btn' href='viewofjs.php?jid=".$result['jobid']."&st=0'>Job</a> </td>";
-                    echo "<td >  <a class='primary-btn' href='view_applicants.php?jid=".$result['jobid']."&st=0'>Applicants</a> </td>";
+                   
                     //<a class="primary-btn" href="contact.html">Get Started Now</a>
                     //<td><button type="button" class="btn btn-success btn-lg" onclick="apply(<?php echo $result['jobid']; )">
                     //<span class='glyphicon glyphicon-ok'></span> Apply for this Job

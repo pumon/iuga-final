@@ -8,7 +8,12 @@ $jobid=$_POST['jid'];
 $name=$_POST['name'];
 $mobile=$_POST['mobno'];
 $email=$_POST['email'];
-$date=date("y-m-d");
+$qual=$_POST['degree'];
+$result=$_POST['cgpa'];
+$type=$_POST['type'];
+$exp=$_POST['exp'];
+$date=date("d-m-y");
+
 //echo  $jobid;
 $q1=mysqli_query($db1,"select * from jsee where '$mobile' = mobile AND '$email' = email ");
 //$w=mysqli_result($q1);
@@ -28,7 +33,7 @@ if($q=mysqli_fetch_array($q1)){
 else{
    
         
-          $q2=mysqli_query($db1,"insert into jsee (name,mobile,jid,email,date) VALUES('$name','$mobile','$jobid','$email','$date')");
+          $q2=mysqli_query($db1,"insert into jsee (name,mobile,jid,email,date,experience,result,type,qual) VALUES('$name','$mobile','$jobid','$email','$date','$exp','$result','$type','$qual')");
          /* $q3=mysqli_query($db1,"select id from jsee where '$mobile' = mobile");
           $q4=mysqli_fetch_array($q3);
           $fid=$q4['id'];
