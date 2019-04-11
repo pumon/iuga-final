@@ -131,13 +131,13 @@ $result=mysqli_fetch_array($query);
         </header><!-- #header -->
 
       <!-- start banner Area -->
-      <section class="relative" id="top" style="width: 100%; height: 500px; background-image: 'img/bg.png'">  
+      <section class="relative" id="home" style="width: 100%; height: 500px; background-image: 'img/bg.png'">  
         <div class="overlay overlay-bg"></div>
         <div class="container">       
           <div class="row d-flex align-items-center justify-content-center">
             <div class="about-content col-lg-12">
               <h1 class="text-white"> Careers </h1> 
-                <a class="primary-btn" href="index.php?#jobs">Go Back to Viewing Other Jobs</a>
+                <a class="primary-btn" style="margin-top: 30px;" href="index.php?#jobs">Go Back to Viewing Other Jobs</a>
             </div>  
           </div>
         </div>

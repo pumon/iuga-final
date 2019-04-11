@@ -2306,9 +2306,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .primary-btn:hover {
-  background: #fff;
-  color: #fab700;
-  border: #fab700;
+  color: #fff;
 }
 
 .primary-btn:hover span {
@@ -2328,7 +2326,6 @@ body.mobile-nav-active #mobile-nav-toggle {
 .primary-btn.white:hover {
   background: #fff;
   color: #fab700;
-  border: #fab700;
 }
 
 .primary-btn.white:hover span {
